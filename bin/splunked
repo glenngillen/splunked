@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+require 'optparse'
+
+irb = RUBY_PLATFORM =~ /(:?mswin|mingw)/ ? 'irb.bat' : 'irb'
+root = File.expand_path("..", File.dirname(__FILE__))
+
+libs =  " -r irb/completion"
+libs << %( -r "#{root}/lib/splunked")
+
+home_path = ENV["HOME"].strip
+splunk_conf = "#{home_path}/.splunk"
+if ENV["SPLUNK_URL"].nil? && File.exists?(splunk_conf)
+  puts "Loading config from #{splunk_conf}"
+  ENV["SPLUNK_URL"] = File.read(splunk_conf)
+elsif ENV["SPLUNK_URL"].nil?
+  puts "To automatically connect to Splunk put your Splunk URL in the file #{splunk_conf}"
+  puts "or set your SPLUNK_URL environment variable."
+  puts ""
+end
+
+ENV["SPLUNK_URL"] = ENV["SPLUNK_URL"].chomp.strip
+exec "#{irb} #{libs} --simple-prompt"

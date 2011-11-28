@@ -18,6 +18,9 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
+  s.add_development_dependency "webmock", "~> 1.6.2"
+  s.add_development_dependency "rake", "~> 0.9.0"
+  s.add_development_dependency "ruby-debug19"
   s.add_runtime_dependency "rest-client", "~> 1.6.7"
   s.add_runtime_dependency "nokogiri", "~> 1.5.0"
   s.add_runtime_dependency "chronic_duration", "~> 0.8.0"

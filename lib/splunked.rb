@@ -1,6 +1,7 @@
 require "splunked/version"
 require "rest-client"
 require "nokogiri"
+require "chronic_duration"
 
 module Splunked
   def self.search(terms, opts = {})
