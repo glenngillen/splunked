@@ -39,3 +39,5 @@ all_results.rare(:url, :limit => 20)
 # Chart: http://docs.splunk.com/Documentation/Splunk/4.2.4/SearchReference/chart
 # Stats: http://docs.splunk.com/Documentation/Splunk/4.2.4/SearchReference/stats
 # Contingency: http://docs.splunk.com/Documentation/Splunk/4.2.4/SearchReference/contingency
+
+[![Analytics](https://ga-beacon.appspot.com/UA-46840117-1/splunked/readme?pixel)](https://github.com/igrigorik/ga-beacon)
